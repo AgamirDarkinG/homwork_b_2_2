@@ -10,12 +10,10 @@ struct bank_acc
         std::string name;
         float balance;
     };
-void new_balance(bank_acc& p)
+void new_balance(bank_acc& p, float nb)
     {
-        float newbalance = 0;
-        std::cout << "Введите новый баланс: ";
-        std::cin >> newbalance;
-        p.balance = newbalance;
+        
+        p.balance = nb;
     }
 
 int main(int argc, char** argv)
@@ -27,7 +25,11 @@ int main(int argc, char** argv)
     std::cin >> p1.name;
     std::cout << "Введите баланс: ";
     std::cin >> p1.balance;
-
+    
+    float newbalance = 0;
+    std::cout << "Введите новый баланс: ";
+    std::cin >> newbalance;
+    
     new_balance(p1);
 
     std::cout << "Ваш счёт: " << p1.name << ", " << p1.number << ", " << p1.balance;
